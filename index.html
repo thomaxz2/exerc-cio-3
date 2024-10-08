@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário Exemplo</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS externo -->
+</head>
+<body>
+
+  <form id="meuForm">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome">
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email">
+
+    <label>Sexo:</label>
+    <input type="radio" id="masculino" name="sexo" value="masculino">
+    <label for="masculino">Masculino</label>
+
+    <input type="radio" id="feminino" name="sexo" value="feminino">
+    <label for="feminino">Feminino</label>
+
+    <button type="button">Enviar</button>
+  </form>
+
+
+  
+</body>
+</html>
+<style>body {
+    font-family: Verdana;
+    font-size: 18pt;
+  }
+  
+  form {
+    border: 22px double red; /* Borda do formulário */
+    width: 400px; /* Tamanho do formulário */
+    padding: 30px; /* Padding do formulário */
+  }
+  
+  input[type="text"], input[type="email"] {
+    font-size: 18pt;
+    border: 1px solid black; /* Borda sólida e preta */
+    display: block;
+    margin-bottom: 10px;
+    width: 100%; /* Faz a caixa de texto preencher a largura do formulário */
+  }
+  
+  button {
+    font-size: 18pt;
+  }</style>

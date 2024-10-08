@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Idade</title>
+</head>
+<body>
+
+    <h1>Cálculo da Idade</h1>
+    
+    <label for="nome">Digite seu nome:</label>
+    <input type="text" id="nome"><br><br>
+    
+    <label for="anoNascimento">Digite seu ano de nascimento:</label>
+    <input type="number" id="anoNascimento"><br><br>
+    
+    <label for="anoAtual">Digite o ano atual:</label>
+    <input type="number" id="anoAtual"><br><br>
+    
+    <button onclick="calcularIdade()">Calcular Idade</button>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+        function calcularIdade() {
+            const nome = document.getElementById('nome').value;
+            const anoNascimento = parseInt(document.getElementById('anoNascimento').value);
+            const anoAtual = parseInt(document.getElementById('anoAtual').value);
+
+            // Verifica se os dados são válidos
+            if (nome && !isNaN(anoNascimento) && !isNaN(anoAtual)) {
+                const idade = anoAtual - anoNascimento;
+                document.getElementById('resultado').innerHTML = `${nome}<br>A sua idade é ${idade} anos.`;
+            } else {
+                document.getElementById('resultado').textContent = 'Por favor, insira valores válidos.';
+            }
+        }
+    </script>
+
+</body>
+</html>

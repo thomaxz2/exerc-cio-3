@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobro de um Número</title>
+</head>
+<body>
+
+    <h1>Cálculo do Dobro</h1>
+    <label for="numero">Digite um número inteiro:</label>
+    <input type="number" id="numero">
+    <button onclick="calcularDobro()">Calcular Dobro</button>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+        function calcularDobro() {
+            const numero = parseInt(document.getElementById('numero').value);
+
+            if (!isNaN(numero)) {
+                const dobro = numero * 2;
+                document.getElementById('resultado').textContent = `O dobro de ${numero} é ${dobro}.`;
+            } else {
+                document.getElementById('resultado').textContent = 'Por favor, insira um número válido.';
+            }
+        }
+    </script>
+
+</body>
+</html>

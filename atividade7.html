@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Soma</title>
+</head>
+<body>
+
+    <h1>Cálculo da Soma de Três Números</h1>
+    
+    <label for="numero1">Digite o primeiro número:</label>
+    <input type="number" id="numero1"><br><br>
+    
+    <label for="numero2">Digite o segundo número:</label>
+    <input type="number" id="numero2"><br><br>
+    
+    <label for="numero3">Digite o terceiro número:</label>
+    <input type="number" id="numero3"><br><br>
+    
+    <button onclick="calcularSoma()">Calcular Soma</button>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+        function calcularSoma() {
+            const numero1 = parseInt(document.getElementById('numero1').value);
+            const numero2 = parseInt(document.getElementById('numero2').value);
+            const numero3 = parseInt(document.getElementById('numero3').value);
+
+            // Verifica se todos os números são válidos
+            if (!isNaN(numero1) && !isNaN(numero2) && !isNaN(numero3)) {
+                const soma = numero1 + numero2 + numero3;
+                document.getElementById('resultado').textContent = `A soma dos números é ${soma}.`;
+            } else {
+                document.getElementById('resultado').textContent = 'Por favor, insira números válidos.';
+            }
+        }
+    </script>
+
+</body>
+</html>

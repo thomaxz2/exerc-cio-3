@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Degraus de Escada</title>
+</head>
+<body>
+
+    <h1>Cálculo de Degraus de uma Escada</h1>
+    
+    <label for="alturaDegrau">Altura do degrau (em metros):</label>
+    <input type="number" id="alturaDegrau" step="0.01" required><br><br>
+    
+    <label for="alturaDesejada">Altura que deseja alcançar (em metros):</label>
+    <input type="number" id="alturaDesejada" step="0.01" required><br><br>
+    
+    <button onclick="calcularDegraus()">Calcular Degraus</button>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+        function calcularDegraus() {
+            const alturaDegrau = parseFloat(document.getElementById('alturaDegrau').value);
+            const alturaDesejada = parseFloat(document.getElementById('alturaDesejada').value);
+
+            // Verifica se os dados são válidos
+            if (!isNaN(alturaDegrau) && alturaDegrau > 0 && !isNaN(alturaDesejada) && alturaDesejada > 0) {
+                const degraus = Math.ceil(alturaDesejada / alturaDegrau); // Arredonda para cima
+                document.getElementById('resultado').textContent = `Você precisará subir ${degraus} degraus.`;
+            } else {
+                document.getElementById('resultado').textContent = 'Por favor, insira valores válidos.';
+            }
+        }
+    </script>
+
+</body>
+</html>

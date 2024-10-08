@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Área do Triângulo</title>
+</head>
+<body>
+
+    <h1>Cálculo da Área do Triângulo</h1>
+    
+    <label for="base">Digite a base do triângulo:</label>
+    <input type="number" id="base" step="0.01"><br><br>
+    
+    <label for="altura">Digite a altura do triângulo:</label>
+    <input type="number" id="altura" step="0.01"><br><br>
+    
+    <button onclick="calcularArea()">Calcular Área</button>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+        function calcularArea() {
+            const base = parseFloat(document.getElementById('base').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+
+            // Verifica se a base e a altura são válidas
+            if (!isNaN(base) && base > 0 && !isNaN(altura) && altura > 0) {
+                const area = (base * altura) / 2;
+                document.getElementById('resultado').textContent = `A área do triângulo é ${area.toFixed(2)}.`;
+            } else {
+                document.getElementById('resultado').textContent = 'Por favor, insira valores válidos para a base e a altura.';
+            }
+        }
+    </script>
+
+</body>
+</html>
